@@ -7,7 +7,6 @@ class Feature(models.Model):
 		('No', 'Nominal'),
 		('In', 'Interval'),
 		('Ra', 'Ratio'),
-
 	]
 	DATA_CHOICES = [
 		('Nu', 'Numeric'),
@@ -26,3 +25,33 @@ class Feature(models.Model):
 
 	def __str__(self):
 		return self.name
+
+class Configuration(models.Model):
+	PRODUCT_CHOICES = [
+		('Ag', 'Agriculture'),
+		('Pe', 'Personal'),
+		('Ca', 'Capital'),
+		('Ra', 'Ratio'),
+	]
+	CATEGORY_CHOICES = [
+		('In', 'Individual'),
+		('Or', 'Organisation'),
+		('Co', 'Country'),
+		('Cr', 'CreditHistory'),
+		('Lo', 'Loan'),
+	]
+	CHARACTERISTIC_CHOICES = [
+		('Ag', 'Age'),
+		('In', 'Income'),
+		('Ge', 'Gender'),
+	]
+
+	COLOUR_CHOICES = [
+		('Gr', 'Green'),
+		('Am', 'Amber'),
+		('Re', 'Red'),
+	]
+	product = models.CharField(max_length=20, choices=PRODUCT_CHOICES)
+	category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+	characteristic = models.CharField(max_length=20, choices=CHARACTERISTIC_CHOICES)
+	colour = models.CharField(max_length=20, choices=COLOUR_CHOICES)
