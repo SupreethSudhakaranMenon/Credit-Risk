@@ -26,6 +26,7 @@ class Feature(models.Model):
 	def __str__(self):
 		return self.name
 
+# Configuration Model
 class Configuration(models.Model):
 	PRODUCT_CHOICES = [
 		('Ag', 'Agriculture'),
