@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
 
 from .models import Feature
+from .models import Configuration
 from .forms import FeatureForm
 from .forms import ConfigurationForm
 
